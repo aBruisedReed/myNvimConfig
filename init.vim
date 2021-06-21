@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'morhetz/gruvbox'
 Plug 'tomasiser/vim-code-dark'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -11,7 +12,6 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'blueyed/vim-diminactive'
 Plug 'tpope/vim-fugitive'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'preservim/nerdcommenter'
@@ -24,7 +24,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -34,8 +34,8 @@ if has("syntax")
     syntax on
 endif
 
-" vim code dark
-colorscheme codedark
+" color scheme
+colorscheme gruvbox
 set background=dark
 
 " spaces, tabs, indent
@@ -169,7 +169,9 @@ set statusline+=%*
 " lightline
 set showtabline=2
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'seoul256',
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
       \ },
@@ -238,3 +240,5 @@ set langmap=ㅇa,ㅜb,ㅔc,ㅣd,ㅕe,ㅏf,ㅡg,ㄴh,ㅁi,ㅇj,ㄱk,ㅈl,ㅎm,ㅅ
 "vim-jsx-pretty
 let g:vim_jsx_pretty_colorful_config = 0 " default 0
 
+" enable true color in nvim
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1

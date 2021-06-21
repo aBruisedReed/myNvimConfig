@@ -6,11 +6,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'preservim/nerdtree'
 Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'vim-airline/vim-airline'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'blueyed/vim-diminactive'
 Plug 'tpope/vim-fugitive'
@@ -23,6 +22,9 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'ap/vim-css-color'
+Plug 'tpope/vim-surround'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -34,7 +36,7 @@ endif
 
 " vim code dark
 colorscheme codedark
-set background=dark 
+set background=dark
 
 " spaces, tabs, indent
 set smartindent
@@ -46,13 +48,14 @@ set shiftwidth=2
 
 " fo" line number
 set nu
-set relativenumber 
-
+set relativenumber
+ 
 " cursor highlight
 set cursorline
 
 " searching ignoring case
 set ignorecase
+set smartcase
 
 " 마지막으로 수정된 곳에 커서를 위치함
 au BufReadPost *
@@ -68,12 +71,13 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 
 " 상태바 표시를 항상한다
-set laststatus=2 
+set laststatus=2
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
 
 " for vim-airline
-let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
-set laststatus=1 " turn on bottom bar
+" let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
+" set laststatus=1 " turn on bottom bar
+
 " for emmet.vim, tutorial https://raw.githubusercontent.com/mattn/emmet-vim/master/TUTORIAL
 let g:user_emmet_leader_key='<C-e>'
 
@@ -162,6 +166,25 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" lightline
+set showtabline=2
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ }
+      \ }
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -202,3 +225,16 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+" using multiple argdo, bufdo
+set hidden
+
+" %:h to %%
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" 한글일 때도 단축키 가능하도록
+set langmap=ㅇa,ㅜb,ㅔc,ㅣd,ㅕe,ㅏf,ㅡg,ㄴh,ㅁi,ㅇj,ㄱk,ㅈl,ㅎm,ㅅn,ㅊo,ㅍp,ㅅq,ㅐr,ㄴs,ㅓt,ㄷu,ㅗv,ㄹw,ㄱx,ㄹy,ㅁz
+
+"vim-jsx-pretty
+let g:vim_jsx_pretty_colorful_config = 0 " default 0
+

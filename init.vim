@@ -124,7 +124,7 @@ nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
 "insert newline without entering insertmode
-nmap <CR> i<CR><Esc>
+nmap K i<CR><Esc>
 
 " ycm, not pop up preview
 set completeopt-=preview

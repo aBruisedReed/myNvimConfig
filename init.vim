@@ -11,7 +11,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'preservim/nerdcommenter'
@@ -102,12 +102,11 @@ endfunction
 " cmd line mode history
 set history=200
 
-" indent guide 
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
-let g:indent_guides_guide_size=1
+" indentLine
+let g:indentLine_char = '│'
+" let g:indentLine_setColors = 0
+" let g:indentLine_color_term = 239
+
 
 " buffer key mapping
 nnoremap <silent> [b :bprevious<CR>

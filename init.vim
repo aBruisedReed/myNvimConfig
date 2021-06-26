@@ -24,7 +24,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/tagbar'
 
 call plug#end()
 
@@ -82,10 +82,6 @@ let NERDTreeShowHidden=1
 " 상태바 표시를 항상한다
 set laststatus=2
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
-
-" for vim-airline
-" let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
-" set laststatus=1 " turn on bottom bar
 
 " for emmet.vim, tutorial https://raw.githubusercontent.com/mattn/emmet-vim/master/TUTORIAL
 let g:user_emmet_leader_key='<C-e>'
@@ -169,6 +165,9 @@ let g:NERDToggleCheckAllLines = 1
 " gutentags
 set statusline+=%{gutentags#statusline()}
 
+" tagbar
+nmap <Leader>tg :TagbarToggle<CR>
+
 " syntasitc
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -194,6 +193,7 @@ let g:lightline = {
       \   'buffers': 'tabsel'
       \ }
       \ }
+set noshowmode
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1

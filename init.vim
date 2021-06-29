@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'tomasiser/vim-code-dark'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
@@ -12,7 +11,6 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-fugitive'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'preservim/nerdcommenter'
 Plug 'scrooloose/syntastic'
@@ -162,9 +160,6 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
-" gutentags
-set statusline+=%{gutentags#statusline()}
-
 " tagbar
 nmap <Leader>tg :TagbarToggle<CR>
 
@@ -172,6 +167,7 @@ nmap <Leader>tg :TagbarToggle<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
 
 " lightline
 set showtabline=2
@@ -250,3 +246,7 @@ let g:vim_jsx_pretty_colorful_config = 0 " default 0
 
 " enable true color in nvim
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+ 
+" change grep to ack
+set grepprg=ack\ --nogroup\ --column\ $*
+set grepformat=%f:%l:%c:%m

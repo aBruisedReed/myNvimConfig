@@ -23,6 +23,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
 Plug 'preservim/tagbar'
+Plug 'digitaltoad/vim-pug'
 
 call plug#end()
 

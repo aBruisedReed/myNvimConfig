@@ -19,7 +19,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
 Plug 'preservim/tagbar'

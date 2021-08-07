@@ -4,7 +4,6 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
-Plug 'preservim/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
@@ -23,9 +22,10 @@ Plug 'ap/vim-css-color'
 Plug 'tpope/vim-surround'
 Plug 'preservim/tagbar'
 Plug 'digitaltoad/vim-pug'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
-
 
 " Syntax Highlighting
 if has("syntax")
@@ -69,13 +69,6 @@ au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
 \ exe "norm g`\"" |
 \ endif
-
-" NERDTree ON 단축키를 "\nt"로 설정
-map <Leader>nt <ESC>:NERDTreeToggle<CR>
-" NT로 파일 열고 NT 자동 닫기
-let NERDTreeQuitOnOpen=1
-" 숨김 파일 표시
-let NERDTreeShowHidden=1
 
 " 상태바 표시를 항상한다
 set laststatus=2
@@ -239,7 +232,7 @@ set hidden
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " 한글일 때도 단축키 가능하도록
-set langmap=ㅇa,ㅜb,ㅔc,ㅣd,ㅕe,ㅏf,ㅡg,ㄴh,ㅁi,ㅇj,ㄱk,ㅈl,ㅎm,ㅅn,ㅊo,ㅍp,ㅅq,ㅐr,ㄴs,ㅓt,ㄷu,ㅗv,ㄹw,ㄱx,ㄹy,ㅁz
+" set langmap=ㅇa,ㅜb,ㅔc,ㅣd,ㅕe,ㅏf,ㅡg,ㄴh,ㅁi,ㅇj,ㄱk,ㅈl,ㅎm,ㅅn,ㅊo,ㅍp,ㅅq,ㅐr,ㄴs,ㅓt,ㄷu,ㅗv,ㄹw,ㄱx,ㄹy,ㅁz
 
 "vim-jsx-pretty
 let g:vim_jsx_pretty_colorful_config = 0 " default 0
@@ -250,3 +243,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " change grep to ack
 set grepprg=ack\ --nogroup\ --column\ $*
 set grepformat=%f:%l:%c:%m
+
+" fzf
+map <Leader>ff <ESC>:Files<CR>
+map <Leader>fa <ESC>:Ag<CR>

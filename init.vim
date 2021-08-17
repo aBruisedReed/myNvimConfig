@@ -240,10 +240,17 @@ let g:vim_jsx_pretty_colorful_config = 0 " default 0
 " enable true color in nvim
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
  
+" ag is better
 " change grep to ack
-set grepprg=ack\ --nogroup\ --column\ $*
-set grepformat=%f:%l:%c:%m
+" set grepprg=ack\ --nogroup\ --column\ $*
+" set grepformat=%f:%l:%c:%m
 
 " fzf
-map <Leader>ff <ESC>:Files<CR>
-map <Leader>fa <ESC>:Ag<CR>
+map <Leader>fz <ESC>:Files<CR>
+map <Leader>ag <ESC>:Ag<CR>
+
+" source vimrc (reload init)
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+" coc explorer
+:nnoremap <leader>ex :CocCommand explorer<CR>

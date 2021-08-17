@@ -253,4 +253,7 @@ map <Leader>ag <ESC>:Ag<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " coc explorer
-:nnoremap <leader>ex :CocCommand explorer<CR>
+:nnoremap <Leader>ex :CocCommand explorer<CR>
+
+" quick write
+map <Leader>ww :w<CR>

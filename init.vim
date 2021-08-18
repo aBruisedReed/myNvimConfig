@@ -256,6 +256,3 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " coc explorer
 :nnoremap <Leader>ex :CocCommand explorer<CR>
-
-" quick write
-map <Leader>ww :w<CR>

@@ -105,10 +105,12 @@ let g:indentLine_char = '│'
 
 
 " buffer key mapping
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
+nnoremap <silent> H :bprevious<CR>
+nnoremap <silent> L :bnext<CR>
+" nnoremap <silent> [b :bprevious<CR>
+" nnoremap <silent> ]b :bnext<CR>
+" nnoremap <silent> [B :bfirst<CR>
+" nnoremap <silent> ]B :blast<CR>
 
 "insert newline without entering insertmode
 nmap K i<CR><Esc>

@@ -24,6 +24,7 @@ Plug 'preservim/tagbar'
 Plug 'digitaltoad/vim-pug'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -256,3 +257,9 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " coc explorer
 :nnoremap <Leader>ex :CocCommand explorer<CR>
+
+" coc snippets
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+

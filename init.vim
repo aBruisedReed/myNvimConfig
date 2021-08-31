@@ -256,10 +256,11 @@ map <Leader>ag <ESC>:Ag<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " coc explorer
-:nnoremap <Leader>ex :CocCommand explorer<CR>
+nnoremap <Leader>ex :CocCommand explorer<CR>
 
 " coc snippets
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
-
+" fast git add commit, pushj
+nnoremap <Leader>gi :Git add -A \| :Git commit<CR>

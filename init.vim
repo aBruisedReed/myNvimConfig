@@ -264,3 +264,7 @@ imap <C-l> <Plug>(coc-snippets-expand)
 
 " fast git add commit, pushj
 nnoremap <Leader>gi :Git add -A \| :Git commit<CR>
+
+" close netrw from buffer
+autocmd FileType netrw setl bufhidden=wipe
+let g:netrw_fastbrowse = 0

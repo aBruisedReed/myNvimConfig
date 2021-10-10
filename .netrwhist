@@ -1,6 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/Users/macbook/development/sns-using-react-nodejs/server/routes'
-let g:netrw_dirhist_3='/Users/macbook/development/sns-using-react-nodejs/server/config'
-let g:netrw_dirhist_2='/Users/macbook/development/sns-using-react-nodejs/server/routes'
-let g:netrw_dirhist_1='/Users/macbook/development/sns-using-react-nodejs/server/config'
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/macbook/development/portfolio/src/fonts'
+let g:netrw_dirhist_1='/Users/macbook/development/portfolio/src'
+let g:netrw_dirhist_0='/Users/macbook/development/portfolio/src/fonts'
+let g:netrw_dirhist_9='/Users/macbook/development/portfolio/src/fonts/Do_Hyeon'
+let g:netrw_dirhist_8='/Users/macbook/development/portfolio/src/fonts'
+let g:netrw_dirhist_7='/Users/macbook/development/kpark'
+let g:netrw_dirhist_6='/Users/macbook/development/kpark/kpark/src'
+let g:netrw_dirhist_5='/Users/macbook/development/kpark/kpark'
+let g:netrw_dirhist_4='/Users/macbook/development/sns-using-react-nodejs/src'
+let g:netrw_dirhist_3='/Users/macbook/development/sns-using-react-nodejs/.git'

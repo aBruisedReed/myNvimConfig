@@ -269,5 +269,8 @@ nnoremap <Leader>gi :Git add -A \| :Git commit<CR>
 autocmd FileType netrw setl bufhidden=wipe
 let g:netrw_fastbrowse = 0
 
-" fast git add commit, pushj
+" quick run python
 nnoremap <Leader>pr :!python3 %<CR>
+
+" quick run js
+nnoremap <Leader>jr :!node %<CR>

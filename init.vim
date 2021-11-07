@@ -270,7 +270,7 @@ autocmd FileType netrw setl bufhidden=wipe
 let g:netrw_fastbrowse = 0
 
 " quick run python
-nnoremap <Leader>pr :!python3 %<CR>
+nnoremap <Leader>pr :w \| :!python3 %<CR>
 
 " quick run js
-nnoremap <Leader>jr :!node %<CR>
+nnoremap <Leader>jr :w \| :!node %<CR>
